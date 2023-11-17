@@ -1,16 +1,15 @@
+#Importando librerías escenciales
 import numpy
 import matplotlib.pyplot as plt
 import scipy
-import cv2
+import cv2 as cv
+import binarize
 
-img_raw=cv2.imread('sample.jpg')
+#Cargando imágen
+img=cv.imread('samples/sample.png')
+img2=cv.imread('samples/sample2.jpg')
+#cv.imshow('Test Image',img2)
+#cv.waitKey(0)
 
-type(img_raw)
-numpy.ndarray
-
-img_raw.shape
-(1300,1950,3)
-
-img = cv2.cvtColor(img_raw, cv2.COLOR_BGR2RGB)
-
-cv2.imwrite('processed_image.jpg',img)
+#Binarizando imágen
+binarized_img =binarize.execute(img2)
